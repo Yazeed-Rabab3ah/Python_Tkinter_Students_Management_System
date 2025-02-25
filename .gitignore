@@ -1,3 +1,4 @@
+#the trailing slash "/" indicates that they are directories 
 venv/
 __pycache__/
 students.db

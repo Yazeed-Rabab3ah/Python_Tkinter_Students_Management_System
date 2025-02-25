@@ -3,8 +3,9 @@ from tkinter import messagebox
 from dataBaseHandler import DataBaseHandler
 
 class RegisterationForm(tk.Frame):
-    def __init__(self, parent):
+    def __init__(self, parent, refresh_callback):
         super().__init__(parent, padx=10, pady=10)
+        self.refresh_callback = refresh_callback
 
         tk.Label(self, text='Full Name').pack(fill='x')
         self.name_entry = tk.Entry(self)
@@ -35,7 +36,9 @@ class RegisterationForm(tk.Frame):
         if name and email and age and gender:
             try:
                 DataBaseHandler.insert_student(name, email, int(age), gender)  
-                messagebox.showinfo('Success', 'Student registered successfully!')  
+                self.refresh_callback()
+                messagebox.showinfo('Success', 'Student registered successfully!') 
+                 
 
                 # ✅ Reset Form
                 self.name_entry.delete(0, 'end')
