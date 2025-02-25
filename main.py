@@ -12,7 +12,9 @@ class MainApplication(tk.Tk):
     def create_widgets(self):
         title_lable = tk.Label(self, text="Students Management System",font=("Helvetica",16))
         title_lable.pack(side='top', fill='x')  
-        self.registeration_form = RegisterationForm()
+        self.registeration_form = RegisterationForm(self)
+        self.registeration_form.pack(side='left', fill='y', padx=10, pady=10)
+
           
 
 if __name__ == '__main__':
