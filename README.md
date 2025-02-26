@@ -41,14 +41,5 @@ The **Student Management System** is a simple desktop application built with **P
 ## 🎯 Screenshots
 ![Image](https://github.com/user-attachments/assets/78e496c1-b15e-4ade-9cce-7ca14d92b90f)
 
-## 📝 Future Enhancements
-- Add more student details (e.g., age, course, grade, etc.)
-- Implement search and filter functionality
-- Export student data to CSV or Excel
 
-## 🏆 Credits
-Developed by **Your Name** 🚀
-
----
-📬 Have suggestions or found an issue? Feel free to contribute or report it!
 
