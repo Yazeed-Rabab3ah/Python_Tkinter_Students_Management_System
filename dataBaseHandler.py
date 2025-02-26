@@ -36,7 +36,23 @@ class DataBaseHandler:
                 return conn.execute('''SELECT * FROM students''').fetchall()
         except sqlite3.Error as e:
             print(f'Error while getting students records! {e}')
-            return []
+    
+    @staticmethod    
+    def get_gender_distribution():
+        try:
+            with DataBaseHandler._connect() as conn:
+                cursor = conn.cursor()
+                cursor.execute("SELECT COUNT(*) FROM students WHERE gender = ?", ("Male",))
+                male_count = cursor.fetchone()[0]
 
+                cursor.execute("SELECT COUNT(*) FROM students WHERE gender = ?", ("Female",))
+                female_count = cursor.fetchone()[0]
 
+                return male_count, female_count
+        except sqlite3.Error as e:
+            print(f'Error fetching gender distribution: {e}')
+            return None, None  
+          
+        
 DataBaseHandler.create_table()
+
